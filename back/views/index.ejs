@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./head') %>
+<body class="grey-bg-color-idx">
+<%- include('./header') %>
+             <main class="main">
+             <div class="carrousel-main">
+<% for (let i = 1; i < 4; i++) { %>
+               <div class="carrousel-item carr-item-<%=i%>" id="item-carrousel-<%=i%>">
+               <div class="carr-desktop-img">
+                 <img src="/public/img/carr/carr-<%=i%>-desktop.jpg">
+                 </div>
+                 <div class="carr-movil-img">
+                   <img src="/public/img/carr/carr-<%=i%>-movil.jpg">
+                 </div>
+               </div>
+<% } %> 
+               </div>
+               <div class="display-texto-caja-prod letra-outfit-sans-serif">
+               Productos Destacados
+               </div>
+               <div class="productos-main">
+               <% for (let i = 0; i < productos_lista.length; i++) { %>
+               <a href="/products/detail/<%= productos_lista[i].id %>" class="CajaProductos-main">
+               <img src="/public/img/<%= productos_lista[i].img %>" class="img-main-productos">
+<% if (productos_lista[0].id == 7 || productos_lista[1].id == 7 || productos_lista[2].id == 7 || productos_lista[3].id == 7) { %>
+        <div class="titulo-producto-inicio nombre-fabricante-caja-producto"><%= productos_lista[i].maker %></div>
+<% } else { %>
+                  <div class="titulo-producto-inicio"><%= productos_lista[i].maker %></div>
+<% } %>
+        <div class="texto-producto-inicio"><%= productos_lista[i].name %></div>
+        <div class="titulo-producto-inicio">$ <%=
+          productos_lista[i].price %></div>
+          <div class="css-display-inline">
+                      <form action="/cart/add/<%= productos_lista[i].id%>"  method="POST"> 
+          <button type="submit" class="boton-agregar-producto
+            action-button post">Agregar al carrito</button>
+            </form></div>
+               </a>
+               <% } %>
+               </div>
+    </main>
+<%- include('./footer') %>
+    
+</body>
+</html>

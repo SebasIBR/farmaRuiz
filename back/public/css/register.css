@@ -1,0 +1,176 @@
+.cuerpo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 30px;
+}
+
+.flexbox-formulario
+{  
+    flex-flow: column nowrap;
+    display: flex;
+    justify-content: start; 
+    flex-direction: column;
+    height: auto;
+    width: auto;  
+}
+.flexbox-formulario-r
+{  
+    flex-flow: column nowrap;
+    display: flex;
+    justify-content: start; 
+    flex-direction: column;
+    height: auto;
+    width: auto;  
+}
+
+.formulario-item
+{
+    font-size: 16px;
+    margin: 5px;
+}
+
+.formulario-input-box
+{
+    min-width: 30%;
+    height: 36px;
+    border: solid 2px black;
+}
+
+.formulario-input-box-email-login
+{ 
+    min-width: 30%;
+    height: 36px;
+    border: solid 2px black;
+
+}
+.formulario-input-box-contrasena-login
+{
+    min-width: 30%;
+    height: 36px;
+    border: solid 2px black;
+}
+
+.formulario-input-box-email-register
+{
+    min-width: 30%;
+    height: 36px;
+    border: solid 2px black;
+
+}
+.formulario-input-box-contrasena-register
+{
+    min-width: 30%;
+    height: 36px;
+    border: solid 2px black;
+
+}
+.formulario-input-box-contrasena-register2
+{
+    min-width: 30%;
+    height: 36px;
+    border: solid 2px black;
+
+}
+
+.formulario-checkbox
+{
+    width: 18px;
+    height: 18px;
+  
+}
+
+.formulario-boton-enviar
+{
+    background-color: white;
+    border-width: 0px;
+    border-radius: 12px;
+    height: 36px;
+    width: 20%;
+    color: black;
+    transition: 500ms color;
+    transition: 500ms background-color;
+}
+
+.boton-profile-cerrar
+{
+    
+    text-decoration: none;
+    color: white;
+    background-color: purple;
+    border-width: 0px;
+    border-radius: 12px;
+    height: 36px;
+    width: 20%;
+    transition: 500ms color;
+    transition: 500ms background-color;
+}
+
+.boton-profile-cerrar:hover
+{
+    background-color: red;
+    color: white;
+    transition: 500ms color;
+    transition: 500ms;
+}
+
+.formulario-boton-enviar:hover
+{
+    background-color: purple;
+    color: white;
+    transition: 500ms color;
+    transition: 500ms;
+}
+.redes-sociales{
+  
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    
+}
+#sign-up-facebook
+{
+  background-color: blue;
+  width: auto;
+  height: 36px;
+  margin: 20px 10px 5px 10px;
+  color: white;
+  border-radius: 12px;
+  display: inline-block;
+}
+#sign-up-Google
+{
+  background-color: white;
+  width: auto;
+  height: 36px;
+  margin: 5px 10px 5px 10px;
+  color: black;
+  border-radius: 12px;
+}
+#sign-up-Aple
+{
+  background-color: black;
+  width: auto;
+  height: 36px;
+  margin: 5px 10px 20px 10px;
+  color: white;
+  border-radius: 12px;
+}
+
+.formulario-warning
+{
+    color: red;
+    font-size: 14px;
+}
+
+.formulario-label
+{
+    font-size: 24px;
+}
+
+.formulario-input-box-imagen
+{
+    border-width: 0px;
+}

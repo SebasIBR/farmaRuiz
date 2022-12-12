@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./head') %>
+<body class="grey-bg-color-idx">
+<%- include('./header') %>
+<main class="main carrito-de-compras">
+  <%if (locals.isUserLogged===true) {%>
+          <div class="display-texto-caja-carrito
+                      letra-productos-sans-serif solo-movil">
+            Información del cliente
+          <div class="carrito-texinfo-box">
+            <%= infouser.email %>
+          </div>
+          Información de pago
+          <div class="carrito-texinfo-box">
+            Tarjeta de Credito banco Uuy mi Billetera
+            Nro. 123412341234 1234
+          </div>
+          <div class="carrito-total-flexbox">
+            Total
+            <div class="carrito-total-a-pagar">
+              $ <%= totalapagar %>
+            </div>
+          </div>
+          <div class="flexbox-boton-checkout-carrito">
+            <button type="submit" class="boton-checkout-carrito">Checkout</button>
+          </div>  
+          </div>
+<div class="display-texto-caja-prod letra-outfit-sans-serif">Productos en el Carrito</div>
+<div class="contenedor-carrito">
+    
+<div class="productos-main caja-prod-carrito">
+  <% if (productos_lista.length) { %>
+      <% for (let i = 0; i < productos_lista.length; i++) { %>
+    <a href="/products/detail/<%= productos_lista[i].id %>" class="CajaProductos-main">
+        <img src="/public\img\<%= productos_lista[i].img %>" class="img-main-productos-carrito">
+        <div class="titulo-producto-inicio nombre-producto-caja-carrito"><%= productos_lista[i].name %></div>
+        <div class="texto-producto-inicio">Cantidad: <%= productos_lista[i].cantidad %></div>
+        <div class="titulo-producto-inicio">$ <%=
+          productos_lista[i].price %></div>
+           <div class="css-display-inline">
+                      <form action="/cart/remove/<%= productos_lista[i].id%>"  method="POST"> 
+          <button type="submit" class="boton-remover-producto
+            action-button post">Remover producto</button>
+            </form></div>
+    </a>
+        <% } %>
+        <% } else { %>
+        <div class="noprod-carrito-abc letra-outfit-sans-serif">Todavia no agregaste ningun producto a tu carrito!</div>
+          <% } %>
+          </div>
+          <div class="display-texto-caja-carrito
+          letra-productos-sans-serif solo-escritorio">
+            Información del cliente
+          <div class="carrito-texinfo-box">
+            <%= infouser.email %>
+          </div>
+          Información de pago
+          <div class="carrito-texinfo-box">
+            Tarjeta de Credito banco Uuy mi Billetera
+            Nro. 123412341234 1234
+          </div>
+          <div class="carrito-total-flexbox">
+            Total
+            <div class="carrito-total-a-pagar">
+              $ <%= totalapagar %>
+            </div>
+          </div>
+          <div class="flexbox-boton-checkout-carrito">
+            <button type="submit" class="boton-checkout-carrito">Checkout</button>
+          </div>  
+          </div>
+    </div>
+    </div>
+    <% } %>
+    </main>
+<%- include('./footer') %>
+    
+</body>
+</html>

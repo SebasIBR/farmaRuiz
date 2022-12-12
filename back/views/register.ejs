@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./head') %>
+<body class="grey-bg-color-idx">
+<%- include('./header') %>
+<main class="cuerpo">
+<% if (redirect_prod){ %>
+            <form class="flexbox-formulario-r"
+action="/register?id_producto=<%= redirect_prod %>"
+method="POST" enctype="multipart/form-data">
+<% } else { %>
+<form class="flexbox-formulario-r" action="/register" method="POST"
+enctype="multipart/form-data">
+<% } %>
+                <div class="formulario-item formulario-label letra-outfit-sans-serif">
+                        <label for="nombreusuario">Nombre de
+                  usuario</label>
+                  <% if (locals.errors && errors.nombreusuario) { %>
+                <div class="formulario-warning letra-noto-sans-error">
+                  <%= errors.nombreusuario %>
+                </div>
+                <% } %>
+                <section class="formulario-warning errorNombreUsuario letra-noto-sans-error"></section>
+                        </div>
+                        <div class="formulario-item">
+                        <input class="formulario-input-box"
+                          type="text" id="nombreusuario"
+                          name="nombreusuario" 
+                          value="<%= locals.old && old.nombreusuario %>">
+                </div>
+                <div class="formulario-item formulario-label letra-outfit-sans-serif">
+                  <label for="emailusuario">E-mail</label>
+                  <% if (locals.errors && errors.emailusuario) { %>
+                <div class="formulario-warning letra-noto-sans-error">
+                  <%= errors.emailusuario %>
+                </div>
+                <% } %>
+                <section class="formulario-warning ErrorEmail letra-noto-sans-error"></section>
+                        </div>
+                        <div class="formulario-item">
+                        <input class="formulario-input-box-email-register"
+                          type="email"
+                          id="emailusuario"name="emailusuario"
+                           value="<%= locals.old &&
+                          old.emailusuario %>">
+                </div>
+                <div class="formulario-item formulario-label letra-outfit-sans-serif">
+                        <label
+                  for="contrasenausuario">Contraseña</label>
+                  <% if (locals.errors && errors.contrasenausuario) { %>
+                <div class="formulario-warning letra-noto-sans-error">
+                  <%= errors.contrasenausuario %>
+                </div>
+                <% } %>
+                <section class="formulario-warning errorContraseña letra-noto-sans-error"></section>
+                        </div>
+                        <div class="formulario-item">
+                        <input class="formulario-input-box-contrasena-register"
+                          type="password" name="contrasenausuario"
+                          id="contrasenausuario" autocomplete="off" value="<%= locals.old && old.contrasenausuario %>">
+                </div>
+                <div class="formulario-item formulario-label letra-outfit-sans-serif">
+                        <label for="contrasenausuario2">Repetir
+                  contraseña</label>
+                  <% if (locals.errors && errors.contrasenausuario2) { %>
+                <div class="formulario-warning letra-noto-sans-error">
+                  <%= errors.contrasenausuario2 %>
+                </div>
+                <% } %>
+                <section class="formulario-warning errorContraseña2 letra-noto-sans-error"></section>
+                        </div>
+                        <div class="formulario-item">
+                        <input class="formulario-input-box-contrasena-register2"
+                          type="password" name="contrasenausuario2"
+                          id="contrasenausuario2" autocomplete="off" value="<%= locals.old && old.contrasenausuario2 %>">
+                        </div>
+             <div class="formulario-item formulario-label letra-outfit-sans-serif">
+               <label for="imagenUser">Imagen de perfil</label>
+             </div><div class="formulario-item">
+               <input class="formulario-input-box formulario-input-box-imagen" type="file" name="imagenUser" id="imagenUser">
+             </div>
+                <div class="formulario-item">
+                        <input class="formulario-checkbox letra-outfit-sans-serif"
+                  type="checkbox"name="terminosycond"
+                  id="terminosycond"  value="<%= locals.old && old.terminosycond %>">
+                        <label class="letra-productos-sans-serif" for="terminosycond">Acepto a los terminos y condiciones</label>
+                                   <section class="formulario-warning
+                  errorCheckbox letra-noto-sans-error"></section>
+                </div>
+                <div class="formulario-item">
+                        <input class="formulario-boton-enviar" type="submit" value="Registrarse">
+                </div>
+            </form>
+        <!--    <section class="redes-sociales">
+                        <button id="sign-up-facebook" type="submit" value="Facebook"><i class="fab fa-facebook-square"></i> Ingresa con Facebook </button>
+                        <button id="sign-up-Google" type="submit" value="Google"><i class="fab fa-google"></i> Ingresa con Google </button>
+                        <button id="sign-up-Aple" type="submit" value="Apple"><i class="fab fa-apple"></i> Ingresa con Apple </button>
+           </section> -->
+        </main>
+<%- include('./footer') %>
+    <script src="/public/js/jsFrontRegister.js"></script>
+</body>
+</html>
+
+
+

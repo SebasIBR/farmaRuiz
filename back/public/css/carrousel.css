@@ -1,0 +1,158 @@
+.carrousel-main::-webkit-scrollbar
+{
+    width: 0;
+}
+
+.carrousel-main::-webkit-scrollbar-track
+{
+    background: transparent;
+}
+
+.carrousel-main::-webkit-scrollbar-thumb
+{
+    background: transparent;
+    border: none;
+}
+
+.carrousel-main
+{
+    max-height: 680px;
+    height: auto;
+    display: flex;
+    overflow-x: auto;
+    scroll-behaviour: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.carrousel-main img
+{
+    max-width: 100vw;
+}
+
+.carrousel-item
+{
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+/*
+.carrousel-main:hover .carrousel-item,
+.carrousel-main:focus-within .carrousel-item
+{
+    animation-name: none;
+}
+*/
+@keyframes proximo
+{
+    75%
+    {
+        left: 0;
+    }
+
+    95%
+    {
+        left: 100%;
+    }
+
+    98%
+    {
+        left: 100%;
+    }
+
+    99%
+    {
+        left: 0;
+    }
+}
+
+@keyframes principio
+{
+    75%
+    {
+        left: 0;
+    }
+
+    95%
+    {
+        left: -300%;
+    }
+
+    98%
+    {
+        left: -300%;
+    }
+
+    99%
+    {
+        left: 0;
+    }
+}
+
+@keyframes snap
+{
+    96%
+    {
+        scroll-snap-align: center;
+    }
+
+    97%
+    {
+        scroll-snap-align: none;
+    }
+
+    99%
+    {
+        scroll-snap-align: none;
+    }
+
+    100%
+    {
+        scroll-snap-align: center;
+    }
+}
+/*
+.carrousel-item
+{
+    animation-timing-function: ease;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.carrousel-main .carr-item-1
+{
+    animation-name: proximo, snap;
+}
+
+.carrousel-main .carr-item-2
+{
+    animation-name: proximo, snap;
+}
+
+.carrousel-main .carr-item-3
+{
+    animation-name: principio, snap;
+}*/
+
+/* responsive carrousel */
+
+@media only screen
+and (min-device-width: 701px)
+and (max-device-width: 746px)
+{
+    .carrousel-main img
+    {
+        width: 105vw;
+    }
+}
+
+@media only screen
+and (min-device-width: 745px)
+and (max-device-width: 768px)
+{
+    .carrousel-main img
+    {
+        width: 110vw;
+    }
+}
